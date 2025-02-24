@@ -1,0 +1,8 @@
+az login
+
+az appservice plan create --name has-emotion-appplan-dev --resource-group emotion-analysis --sku Basic --location eastus
+
+az appservice plan create --name has-emotion-appplan-dev --resource-group emotion-analysis --sku B1
+az webapp create --resource-group emotion-analysis --plan has-emotion-webapp-dev --name has-emotion-react-app-dev --runtime "NODE|18-lts"
+
+az staticwebapp create --name has-emotion-react-app-dev --resource-group emotion-analysis --location eastus --sku Free
